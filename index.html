@@ -10,59 +10,76 @@
       integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>To Do List</title>
   </head>
-  <body>
-    <div id="app">
+  <body class="bg-main text-brownish">
+    <div id="app" class="d-flex justify-content-center align-items-center">
       <div class="tasks" v-if="tasks.length > 0">
+        <h1 class="text-deeperocean">Wattodoo<span class="text-fieryorange">?</span>!</h1>
         <div class="add-task">
           <input
+          class="badge-pill input-space"
             placeholder="type your task"
             type="text"
             v-model="newTask"
             v-on:keyup.enter="addTask"
-          /><button @click="addTask">Add Task</button>
+          /><button class="badge-pill addButton" @click="addTask">Add Task</button>
         </div>
+        <h2>To do tasks:</h2>
         <div class="task" v-for="(task, index) in tasks">
           {{task}}
-          <i class="fas fa-check" @click="completeTask(index)"></i>
-          <i class="fas fa-times" @click="removeTask(index)"></i>
+          <i class="fas fa-check text-oceangreen" @click="completeTask(index)"></i>
+          <i class="fas fa-times text-fieryorange" @click="removeTask(index)"></i>
         </div>
         <h2>completed tasks:</h2>
         <div v-for="(task, index) in completedTasks">
           {{ task }}
-          <i class="fas fa-check-double"></i>
+          <i class="fas fa-check-double text-oceangreen"></i>
         </div>
-        <div class="trashed-title d-flex flex-row align-items-center">
-          <h2>trashed tasks:</h2>
+        <div class="trashed-title d-flex flex-row align-items-baseline">
+          <h2>trashed tasks</h2>
           <i class="far fa-trash-alt" @click="emptyBin"></i>
         </div>
         <div v-for="(task, index) in trashedTasks">
           {{ task }}
-          <i class="fas fa-history" @click="returnTask(index)"></i>
+          <i class="fas fa-history text-deeperocean" @click="returnTask(index)"></i>
         </div>
       </div>
 
       <!-- SECTION no task to do -->
       <div class="no-class" v-else>
+        <h1 class="text-deeperocean">Wattodoo<span class="text-fieryorange">?</span>!</h1>
         <div class="add-task">
           <input
+          class="badge-pill input-space"
             placeholder="type your task"
             type="text"
             v-model="newTask"
-          /><button @click="addTask">Add Task</button>
+          /><button class="badge-pill addButton" @click="addTask">Add Task</button>
         </div>
+        <h2>To do tasks:</h2>
         <p>got nothing to do!</p>
         <h2>completed tasks:</h2>
         <div v-for="(task, index) in completedTasks">
           {{ task }}
-          <i class="fas fa-check-double"></i>
+          <i class="fas fa-check-double text-oceangreen"></i>
+        </div>
+        <div class="trashed-title d-flex flex-row align-items-baseline">
+          <h2>trashed tasks</h2>
+          <i class="far fa-trash-alt" @click="emptyBin"></i>
+        </div>
+        <div v-for="(task, index) in trashedTasks">
+          {{ task }}
+          <i class="fas fa-history text-deeperocean" @click="returnTask(index)"></i>
         </div>
       </div>
       <!-- /SECTION no task to do -->

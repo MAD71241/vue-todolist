@@ -1,0 +1,80 @@
+/* Regole generali di stile */
+
+.bg-main {
+    background: linear-gradient(110deg, #897853 60%, #4e3620 60%);
+}
+
+.bg-brownish {
+    background-color: #433520;
+}
+
+.bg-whiteish {
+    background-color: #fde8cd;
+}
+
+.text-whiteish {
+    color: #fde8cd;
+}
+
+.text-brownish {
+    color: #433520;
+}
+
+.text-oceangreen {
+    color: #00917c;
+}
+
+.text-deeperocean {
+    color: #025955
+}
+
+.text-fieryorange {
+    color: #e84545;
+}
+
+/* Regole generali icone */
+
+.fas, .far {
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+.fas:hover, .far:hover {
+    cursor: pointer;
+}
+
+/* Regole testo App */
+
+#app {
+    height: 100vh;
+    font-family: 'Old Standard TT', serif;
+    font-size: 20px;
+}
+
+#app h1 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+#app h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Regole bottone */
+
+.addButton {
+    color: #fde8cd;
+    background-color: #025955;
+    border-color: none;
+}
+
+/* input */
+
+.input-space {
+    padding: 15px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 250px;
+    outline: none;
+}
