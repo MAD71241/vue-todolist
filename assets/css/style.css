@@ -1,7 +1,7 @@
 /* Regole generali di stile */
 
 .bg-main {
-    background: linear-gradient(110deg, #897853 60%, #4e3620 60%);
+    background: linear-gradient(110deg, white 60%, black 60%);
 }
 
 .bg-brownish {
