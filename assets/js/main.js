@@ -32,14 +32,4 @@ const app = new Vue({
 
         }
     }
-    ,
-    /* mounted() {
-        document.addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') {
-                app.addTask()
-            }
-        }
-        )
-    } */
-
 })
