@@ -9,6 +9,7 @@ const app = new Vue({
             "learn HTML",
             "learn JavaScript"],
         completedTasks: [],
+        trashedTasks: [],
     }
     ,
     methods: {
@@ -22,7 +23,8 @@ const app = new Vue({
 
         },
         removeTask(index) {
-            this.tasks.splice(index, 1)
+            app.trashedTasks.push(app.tasks[index]);
+            app.tasks.splice(index, 1);
         },
         completeTask(index) {
             app.completedTasks.push(app.tasks[index]);
@@ -31,13 +33,13 @@ const app = new Vue({
         }
     }
     ,
-    mounted() {
+    /* mounted() {
         document.addEventListener('keyup', (e) => {
             if (e.key === 'Enter') {
                 app.addTask()
             }
         }
         )
-    }
+    } */
 
 })

@@ -21,6 +21,7 @@
             placeholder="type your task"
             type="text"
             v-model="newTask"
+            v-on:keyup.enter="addTask"
           /><button @click="addTask">Add Task</button>
         </div>
         <div class="task" v-for="(task, index) in tasks">
@@ -31,6 +32,12 @@
         <h2>completed tasks:</h2>
         <div v-for="(task, index) in completedTasks">
             {{ task }}
+            <i class="fas fa-check-double"></i>
+        </div>
+        <h2>trashed tasks:</h2>
+        <div v-for="(task, index) in trashedTasks">
+            {{ task }}
+            <i class="fas fa-history"></i>
         </div>
       </div>
 
@@ -40,7 +47,6 @@
           <input
             placeholder="type your task"
             type="text"
-            <!-- v-on:keyup.enter="addTask" -->
             v-model="newTask"
           /><button @click="addTask">Add Task</button>
         </div>
@@ -48,6 +54,7 @@
         <h2>completed tasks:</h2>
         <div v-for="(task, index) in completedTasks">
             {{ task }}
+            <i class="fas fa-check-double"></i>
         </div>
       </div>
       <!-- /SECTION no task to do -->
