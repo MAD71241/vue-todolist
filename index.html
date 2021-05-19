@@ -10,7 +10,12 @@
       integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
       crossorigin="anonymous"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
     <title>To Do List</title>
   </head>
   <body>
@@ -25,19 +30,22 @@
           /><button @click="addTask">Add Task</button>
         </div>
         <div class="task" v-for="(task, index) in tasks">
-          {{task}} 
+          {{task}}
           <i class="fas fa-check" @click="completeTask(index)"></i>
           <i class="fas fa-times" @click="removeTask(index)"></i>
         </div>
         <h2>completed tasks:</h2>
         <div v-for="(task, index) in completedTasks">
-            {{ task }}
-            <i class="fas fa-check-double"></i>
+          {{ task }}
+          <i class="fas fa-check-double"></i>
         </div>
-        <h2>trashed tasks:</h2>
+        <div class="trashed-title d-flex flex-row align-items-center">
+          <h2>trashed tasks:</h2>
+          <i class="far fa-trash-alt" @click="emptyBin"></i>
+        </div>
         <div v-for="(task, index) in trashedTasks">
-            {{ task }}
-            <i class="fas fa-history"></i>
+          {{ task }}
+          <i class="fas fa-history" @click="returnTask(index)"></i>
         </div>
       </div>
 
@@ -53,8 +61,8 @@
         <p>got nothing to do!</p>
         <h2>completed tasks:</h2>
         <div v-for="(task, index) in completedTasks">
-            {{ task }}
-            <i class="fas fa-check-double"></i>
+          {{ task }}
+          <i class="fas fa-check-double"></i>
         </div>
       </div>
       <!-- /SECTION no task to do -->

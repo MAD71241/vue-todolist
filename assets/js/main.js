@@ -29,7 +29,13 @@ const app = new Vue({
         completeTask(index) {
             app.completedTasks.push(app.tasks[index]);
             app.tasks.splice(index, 1);
-
+        },
+        returnTask(index) {
+            app.tasks.push(app.trashedTasks[index]);
+            app.trashedTasks.splice(index, 1);
+        },
+        emptyBin() {
+            app.trashedTasks = [];
         }
     }
 })
