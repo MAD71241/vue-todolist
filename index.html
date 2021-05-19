@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous"
+    />
+
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="tasks" v-if="tasks.length > 0">
+        <div class="add-task">
+          <input
+            placeholder="type your task"
+            type="text"
+            v-model="newTask"
+          /><button @click="addTask">Add Task</button>
+        </div>
+        <div class="task" v-for="(task, index) in tasks">
+          {{task}} 
+          <i class="fas fa-check" @click="completeTask(index)"></i>
+          <i class="fas fa-times" @click="removeTask(index)"></i>
+        </div>
+        <h2>completed tasks:</h2>
+        <div v-for="(task, index) in completedTasks">
+            {{ task }}
+        </div>
+      </div>
+
+      <!-- SECTION no task to do -->
+      <div class="no-class" v-else>
+        <div class="add-task">
+          <input
+            placeholder="type your task"
+            type="text"
+            v-model="newTask"
+          /><button @click="addTask">Add Task</button>
+        </div>
+        <p>got nothing to do!</p>
+        <h2>completed tasks:</h2>
+        <div v-for="(task, index) in completedTasks">
+            {{ task }}
+        </div>
+      </div>
+      <!-- /SECTION no task to do -->
+    </div>
+
+    <!-- Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- my js -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
