@@ -30,13 +30,14 @@
           class="badge-pill input-space"
             placeholder="type your task"
             type="text"
-            v-model="newTask"
             v-on:keyup.enter="addTask"
+            v-model="newTask"
           /><button class="badge-pill addButton" @click="addTask">Add Task</button>
         </div>
         <h2>To do tasks:</h2>
         <div class="task" v-for="(task, index) in tasks">
           {{task}}
+          <span class="badge text-whiteish bg-oceangreen" v-if="index === tasks.length - 1">NEW</span>
           <i class="fas fa-check text-oceangreen" @click="completeTask(index)"></i>
           <i class="fas fa-times text-fieryorange" @click="removeTask(index)"></i>
         </div>
